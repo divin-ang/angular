@@ -1,11 +1,12 @@
 <section class="todoapp">
   <header class="header">
     <h1>{{label}}</h1>
-    <form>
+    <form (submit)="appendItem(newTodoInput.value); newTodoInput.value='' ">
       <input  #newTodoInput
               name        = "newTodoInput"
               class       = "new-todo"
               placeholder = "Que faire?"
+              [value] = "message"
               autofocus />
     </form>
   </header>
@@ -24,7 +25,7 @@
         <a class="filterAll">Tous</a>
       </li>
       <li>
-        <a class="filterActives">Actifs</a>
+        <a class="filterActives">Actif</a>
       </li>
       <li>
         <a class="filterCompleted">Complétés</a>
